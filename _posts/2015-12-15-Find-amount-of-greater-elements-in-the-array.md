@@ -13,7 +13,7 @@ The brute force solution with the O(n^2) is obvious, just create two nested loop
 
 ![Sorting 1]({{ site.baseurl }}/images/2015-12-15/sorting1.png).
 
-So, we need only to modify some existing sorting algorithm in order to store the required information. We'll take the merge algorithm, because it is very easy to implement and modify for this problem.
+So, we need only to modify some existing sorting algorithm witn O(nlogn) complexity in order to store the required information. We'll take the merge algorithm, because it is very easy to implement and modify for this problem.
 
 Below is the easy merge sort implementation in C#:
 
@@ -87,7 +87,7 @@ First step is to rewrite the algorithms in order to preserve the source array. W
             // run a marker until at least one source subarrays is not empty
             while (l <= middle && m <= end)
             {
-                if (arr[arrindices[l]] > arr[arrindices[m]])
+                if (arr[arrindices[l]] >= arr[arrindices[m]])
                     temp[k++] = arrindices[l++];
                 else
                     temp[k++] = arrindices[m++];
@@ -146,7 +146,7 @@ If we take the element from the second array (else clause), it is by default gre
             // run a marker until at least one source subarrays is not empty
             while (l <= middle && m <= end)
             {
-                if (arr[arrindices[l]] > arr[arrindices[m]])
+                if (arr[arrindices[l]] >= arr[arrindices[m]])
                 {
                     temp[k] = arrindices[l];
                     
@@ -198,7 +198,7 @@ The complete code can be found below:
             // run a marker until at least one source subarrays is not empty
             while (l <= middle && m <= end)
             {
-                if (arr[arrindices[l]] > arr[arrindices[m]])
+                if (arr[arrindices[l]] >= arr[arrindices[m]])
                 {
                     temp[k] = arrindices[l];
 
