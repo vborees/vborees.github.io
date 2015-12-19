@@ -7,7 +7,8 @@ The original problem description:
 Given an array of elements, return an array of values pertaining to how many elements are greater than that element remaining in the array. 
 
 [Source task](http://www.careercup.com/question?id=5631660689195008) 
-[Git Repo](http://www.careercup.com/question?id=5631660689195008) 
+
+[Git Repo](https://github.com/vborees/careercup/tree/master/MergeSortAdv) 
 
 The brute force solution with the O(n^2) is obvious, just create two nested loops and count all the greater elements. Is it possible to solve the problem faster? Let's think about sorting in descending order for just a second. Intuitively, exchanging elements while sorting contains the required information already. If we move some element forward, we incrementing the counter for all elements, that we have  "outruned" in the array:
 
